@@ -1,373 +1,299 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HELON — Multimarcas</title>
+<meta name="description" content="HELON. Nike, Adidas e outras marcas, direto pelo Instagram.">
+<meta name="theme-color" content="#141414">
 
-    <title>Dona Cida | Lanchonete na Vila Madalena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
-
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header class="header">
+    <!-- =================================================
+         SUBSTITUA:
+         - "HELON" pelo nome real da loja (logo, título, footer)
+         - "@helon" e o link do wa.me pelos reais
+         - o nome de cada marca (Nike, Adidas...) na tag de cada peça
+         - IMAGENS: coloque os arquivos dentro da pasta "fotos/"
+           com os mesmos nomes já usados nas tags <img> abaixo
+           (ex: fotos/moletom-tech-fleece.jpg). Se quiser usar
+           outros nomes de arquivo, é só trocar o "src" de cada
+           <img>. Todas usam a mesma pasta.
+    ================================================== -->
 
-    <a href="#" class="logo">
-        <div class="logo_marca">DC</div>
-        <div class="logo_texto">Dona <span>Cida</span></div>
-    </a>
+    <header class="header">
+        <a href="#" class="logo">HELON</a>
 
-    <nav class="nav">
-        <a href="#destaques">Cardápio</a>
-        <a href="#sobre">Sobre Nós</a>
-        <a href="#contato">Contato</a>
-    </nav>
+        <nav class="nav">
+            <a href="#lancamentos">Lançamentos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#comprar">Como comprar</a>
+            <a href="https://instagram.com/helon" target="_blank" class="nav-insta">Seguir no Instagram</a>
+            <span class="nav-indicador"></span>
+        </nav>
 
-    <a href="https://wa.me/5511999999999" class="btn_pedir">💬 Pedir Agora</a>
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
 
-</header>
 
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
 
-<!-- HERO -->
-<section class="hero">
+            <h1 class="titulo-dividido">Seu estilo<br>começa aqui.</h1>
 
-    <div class="hero_lado">
+            <div class="hero-rodape">
+                <p class="hero-legenda">Nike, Adidas e outras marcas, originais, selecionadas uma a uma e vendidas direto por aqui.</p>
+                <div class="hero-acoes">
 
-        <div class="hero_bolha"></div>
-        <div class="hero_bolha_anel"></div>
+                    <a href="#lancamentos" class="btn btn-cheio">Ver peças</a>
+                    <a href="https://instagram.com/helon" target="_blank" class="btn">Seguir no Instagram</a>
+                </div>
+            </div>
 
-        <p class="hero_local">📍 VILA MADALENA · SÃO PAULO</p>
-
-        <h1>Feito com <em>amor,</em><br>sabor de <em>casa.</em></h1>
-
-        <p class="hero_texto">
-            Há mais de 20 anos servindo os melhores lanches, sucos e memórias do bairro. Venha nos visitar ou peça agora.
-        </p>
-
-        <div class="hero_botoes">
-            <a href="https://wa.me/5511999999999" class="btn_solido">💬 Pedir pelo WhatsApp</a>
-            <a href="#destaques" class="btn_contorno">Ver Cardápio →</a>
         </div>
+    </section>
 
-        <div class="hero_stats">
-            <div>
-                <strong>20+</strong>
-                <span>Anos de história</span>
-            </div>
-            <div>
-                <strong>500+</strong>
-                <span>Clientes por dia</span>
-            </div>
-            <div>
-                <strong>4.9★</strong>
-                <span>no Google</span>
-            </div>
-        </div>
+    <div class="divisor"></div>
 
-    </div>
-
-    <div class="hero_foto">
-        <img src="https://images.unsplash.com/photo-1564849012987-56a988d14596?w=1200&q=80&auto=format&fit=crop" alt="X-Burgão Especial da Dona Cida">
-
-        <div class="hero_destaque_card">
-            <p class="tag">DESTAQUE DO DIA</p>
-            <p class="nome">X-Burgão Especial</p>
-            <p class="preco">R$ 28,90</p>
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-trilho">
+            <span>Nike</span><span class="marquee-ponto">•</span>
+            <span>Adidas</span><span class="marquee-ponto">•</span>
+            <span>Puma</span><span class="marquee-ponto">•</span>
+            <span>New Balance</span><span class="marquee-ponto">•</span>
+            <span>Reebok</span><span class="marquee-ponto">•</span>
+            <span>Nike</span><span class="marquee-ponto">•</span>
+            <span>Adidas</span><span class="marquee-ponto">•</span>
+            <span>Puma</span><span class="marquee-ponto">•</span>
+            <span>New Balance</span><span class="marquee-ponto">•</span>
+            <span>Reebok</span><span class="marquee-ponto">•</span>
         </div>
     </div>
 
-</section>
 
+    <!-- LANÇAMENTOS -->
+    <section class="lancamentos" id="lancamentos">
+        <div class="container">
 
-<!-- TICKER -->
-<div class="ticker_wrap">
-    <div class="ticker_track">
-        <span>🍔 Abre às 8h</span>
-        <span>🥤 Sucos Naturais</span>
-        <span>👩‍🍳 Feito na hora</span>
-        <span>📱 Delivery pelo WhatsApp</span>
-        <span>🥟 Coxinha Crocante</span>
-        <span>⚡ Atendimento Rápido</span>
-        <span>🍔 Abre às 8h</span>
-        <span>🥤 Sucos Naturais</span>
-        <span>👩‍🍳 Feito na hora</span>
-        <span>📱 Delivery pelo WhatsApp</span>
-        <span>🥟 Coxinha Crocante</span>
-        <span>⚡ Atendimento Rápido</span>
-    </div>
-</div>
-
-
-<!-- DESTAQUES / CARDÁPIO -->
-<section class="destaques" id="destaques">
-
-    <div class="destaques_topo">
-        <div>
-            <p class="mini_titulo">NOSSOS DESTAQUES</p>
-            <h2>O que tá <em>bom</em> hoje</h2>
-        </div>
-        <p>Ingredientes frescos, receitas de família e aquele capricho de sempre.</p>
-    </div>
-
-    <div class="produtos_grid">
-
-        <div class="produto_card">
-            <div class="produto_imagem_wrap">
-                <img src="https://images.unsplash.com/photo-1564849012987-56a988d14596?w=600&q=80&auto=format&fit=crop" alt="X-Burgão Especial">
-                <span class="produto_selo selo_vermelho">MAIS PEDIDO</span>
-            </div>
-            <div class="produto_info">
-                <h3>X-Burgão Especial</h3>
-                <p>Hambúrguer artesanal 180g, queijo cheddar, bacon crocante e molho secreto da casa.</p>
-            </div>
-        </div>
-
-        <div class="produto_card">
-            <div class="produto_imagem_wrap">
-                <img src="https://images.unsplash.com/photo-1737513916865-63c7fd3b67a7?w=600&q=80&auto=format&fit=crop" alt="Misto Quente">
-            </div>
-            <div class="produto_info">
-                <h3>Misto Quente</h3>
-                <p>Pão de forma tostado na chapa com presunto e queijo derretido na manteiga.</p>
-            </div>
-        </div>
-
-        <div class="produto_card">
-            <div class="produto_imagem_wrap">
-                <img src="https://images.unsplash.com/photo-1736604522360-608c09900076?w=600&q=80&auto=format&fit=crop" alt="Coxinha da Dona Cida">
-                <span class="produto_selo selo_verde">FAVORITO</span>
-            </div>
-            <div class="produto_info">
-                <h3>Coxinha da Dona Cida</h3>
-                <p>Massa crocante com frango desfiado e catupiry, receita da casa há 20 anos.</p>
-            </div>
-        </div>
-
-        <div class="produto_card">
-            <div class="produto_imagem_wrap">
-                <img src="https://images.unsplash.com/photo-1688978181542-87a886a16fbe?w=600&q=80&auto=format&fit=crop" alt="Batata Frita da Casa">
-            </div>
-            <div class="produto_info">
-                <h3>Batata Frita da Casa</h3>
-                <p>Crocante por fora, macia por dentro, temperada na hora com sal e ervas finas.</p>
-            </div>
-        </div>
-
-        <div class="produto_card">
-            <div class="produto_imagem_wrap">
-                <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&q=80&auto=format&fit=crop" alt="Suco de Laranja Natural">
-            </div>
-            <div class="produto_info">
-                <h3>Suco de Laranja Natural</h3>
-                <p>Espremido na hora, sem açúcar adicionado, direto da fruta pro seu copo.</p>
-            </div>
-        </div>
-
-        <div class="produto_card">
-            <div class="produto_imagem_wrap">
-                <img src="https://images.unsplash.com/photo-1688577727939-3c065e99890b?w=600&q=80&auto=format&fit=crop" alt="Brownie da Vovó">
-                <span class="produto_selo selo_vermelho">DOCE DA CASA</span>
-            </div>
-            <div class="produto_info">
-                <h3>Brownie da Vovó</h3>
-                <p>Receita de família, massa úmida e casquinha crocante, servido morno.</p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- SOBRE -->
-<section class="sobre" id="sobre">
-
-    <div class="sobre_foto">
-        <img src="https://images.unsplash.com/photo-1727816563570-f94ae1bbd0ad?w=900&q=80&auto=format&fit=crop" alt="Interior da Dona Cida">
-    </div>
-
-    <div class="sobre_conteudo">
-        <p class="mini_titulo">NOSSA HISTÓRIA</p>
-        <h2>Sabor que <em>une</em> pessoas há 20 anos</h2>
-
-        <p>A Dona Cida abriu as portas em 2004 com uma missão simples: servir comida de verdade com carinho de mãe. Começamos com um balcão, uma chapa e muita vontade.</p>
-
-        <p>Hoje somos o ponto de encontro do bairro. Seja no café da manhã corrido ou no lanche da tarde, nossa cozinha está sempre pronta para te receber bem.</p>
-
-        <div class="sobre_features">
-
-            <div class="sobre_feature">
-                <span class="emoji">🧀</span>
-                <h4>Ingredientes frescos</h4>
-                <p>Comprados todo dia no mercado local</p>
+            <div class="secao-topo reveal">
+                <h2 class="titulo-dividido">Remessa atual</h2>
+                <p>Peças originais em estoque agora. Escolhida a sua, chama no Instagram pra confirmar tamanho e reservar.</p>
             </div>
 
-            <div class="sobre_feature">
-                <span class="emoji">👵</span>
-                <h4>Receitas de família</h4>
-                <p>Segredos que passam de geração em geração</p>
-            </div>
+            <div class="grade-produtos">
 
-            <div class="sobre_feature">
-                <span class="emoji">⚡</span>
-                <h4>Atendimento rápido</h4>
-                <p>Sem espera, com qualidade garantida</p>
-            </div>
+                <a href="https://instagram.com/helon" target="_blank" class="peca reveal">
+                    <div class="peca-foto">
+                        <div class="peca-cortina"></div>
+                        <span class="peca-hover">Ver no Instagram</span>
+                        <span class="peca-selo">Novo</span>
+                        <img src="./fotos/camiseta-branca.jpg" alt="Moletom Nike Tech Fleece">
+                    </div>
+                    <div class="peca-tag">
+                        <div>
+                            <span class="marca">Nike</span>
+                            <span class="nome">Moletom Tech Fleece</span>
+                        </div>
+                        <span class="preco">R$ 289</span>
+                    </div>
+                </a>
 
-            <div class="sobre_feature">
-                <span class="emoji">🧡</span>
-                <h4>Feito com amor</h4>
-                <p>Porque comida boa começa no carinho</p>
+                <a href="https://instagram.com/helon" target="_blank" class="peca reveal reveal_atraso1">
+                    <div class="peca-foto">
+                        <div class="peca-cortina"></div>
+                        <span class="peca-hover">Ver no Instagram</span>
+                        <img src="./fotos/camiseta-preta.jpg" alt="Camiseta Adidas Originals">
+                    </div>
+                    <div class="peca-tag">
+                        <div>
+                            <span class="marca">Adidas</span>
+                            <span class="nome">Camiseta Originals</span>
+                        </div>
+                        <span class="preco">R$ 129</span>
+                    </div>
+                </a>
+
+                <a href="https://instagram.com/helon" target="_blank" class="peca reveal reveal_atraso2">
+                    <div class="peca-foto">
+                        <div class="peca-cortina"></div>
+                        <span class="peca-hover">Ver no Instagram</span>
+                        <img src="./fotos/moletom.jpg" alt="Boné Nike aba curva">
+                    </div>
+                    <div class="peca-tag">
+                        <div>
+                            <span class="marca">Nike</span>
+                            <span class="nome">Boné Aba Curva</span>
+                        </div>
+                        <span class="preco">R$ 99</span>
+                    </div>
+                </a>
+
+                <a href="https://instagram.com/helon" target="_blank" class="peca reveal">
+                    <div class="peca-foto">
+                        <div class="peca-cortina"></div>
+                        <span class="peca-hover">Ver no Instagram</span>
+                        <span class="peca-selo">Última unid.</span>
+                        <img src="./fotos/oversized.jpg" alt="Calça de moletom Adidas">
+                    </div>
+                    <div class="peca-tag">
+                        <div>
+                            <span class="marca">Adidas</span>
+                            <span class="nome">Calça Moletom</span>
+                        </div>
+                        <span class="preco">R$ 219</span>
+                    </div>
+                </a>
+
+                <a href="https://instagram.com/helon" target="_blank" class="peca reveal reveal_atraso1">
+                    <div class="peca-foto">
+                        <div class="peca-cortina"></div>
+                        <span class="peca-hover">Ver no Instagram</span>
+                        <img src="./fotos/stretweer.jpg" alt="Jaqueta Nike Windrunner">
+                    </div>
+                    <div class="peca-tag">
+                        <div>
+                            <span class="marca">Nike</span>
+                            <span class="nome">Jaqueta Windrunner</span>
+                        </div>
+                        <span class="preco">R$ 349</span>
+                    </div>
+                </a>
+
+                <a href="https://instagram.com/helon" target="_blank" class="peca reveal reveal_atraso2">
+                    <div class="peca-foto">
+                        <div class="peca-cortina"></div>
+                        <span class="peca-hover">Ver no Instagram</span>
+                        <img src="./fotos/camiseta-preta.jpg" alt="Tênis Puma Suede Classic">
+                    </div>
+                    <div class="peca-tag">
+                        <div>
+                            <span class="marca">Puma</span>
+                            <span class="nome">Tênis Suede Classic</span>
+                        </div>
+                        <span class="preco">R$ 379</span>
+                    </div>
+                </a>
+
             </div>
 
         </div>
-
-    </div>
-
-</section>
+    </section>
 
 
-<!-- DEPOIMENTOS -->
-<section class="depoimentos">
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+        <div class="container sobre-grade">
 
-    <div class="depoimentos_topo">
-        <div>
-            <p class="mini_titulo">AVALIAÇÕES</p>
-            <h2>O que nossos clientes <em>falam</em></h2>
-        </div>
-
-        <div class="avaliacao_resumo">
-            <div class="avatares">
-                <span>AF</span>
-                <span>RM</span>
-                <span>PL</span>
-                <span>CE</span>
+            <div class="sobre-foto reveal">
+                <img src="fotos/sobre.jpg" alt="Helon">
             </div>
-            <p><strong>4.9</strong> média de avaliação</p>
-        </div>
-    </div>
 
-    <div class="depoimentos_grid">
-
-        <div class="depoimento_card">
-            <p class="estrelas">★★★★★</p>
-            <p class="texto">"O X-Burgão é de outro nível! Melhor hambúrguer do bairro. A Dona Cida capricha em tudo."</p>
-            <strong>Amanda F.</strong>
-            <span>Cliente desde 2019</span>
-        </div>
-
-        <div class="depoimento_card">
-            <p class="estrelas">★★★★★</p>
-            <p class="texto">"Lugar aconchegante, atendimento nota 10 e a coxinha é simplesmente viciante. Venho toda semana!"</p>
-            <strong>Ricardo M.</strong>
-            <span>Cliente desde 2021</span>
-        </div>
-
-        <div class="depoimento_card">
-            <p class="estrelas">★★★★★</p>
-            <p class="texto">"O suco de laranja é fresquíssimo e o misto quente me lembra a cozinha da vovó. Saudade boa!"</p>
-            <strong>Patrícia L.</strong>
-            <span>Cliente desde 2020</span>
-        </div>
-
-        <div class="depoimento_card">
-            <p class="estrelas">★★★★☆</p>
-            <p class="texto">"Preço justo, porção generosa e caprichado em cada detalhe. Recomendo de olhos fechados."</p>
-            <strong>Carlos E.</strong>
-            <span>Cliente desde 2022</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CONTATO / LOCALIZAÇÃO -->
-<section class="contato" id="contato">
-
-    <div class="contato_conteudo">
-
-        <p class="mini_titulo">VENHA NOS VISITAR</p>
-        <h2>Onde e <em>quando</em> nos encontrar</h2>
-
-        <div class="contato_item">
-            <div class="contato_icone">📍</div>
-            <div>
-                <h4>Endereço</h4>
-                <p>Rua das Flores, 142 — Vila Madalena<br>São Paulo, SP · CEP 05435-010</p>
+            <div class="sobre-texto reveal reveal_atraso1">
+                <span class="rotulo">Sobre a loja</span>
+                <p class="destaque">Seleciono peças originais de Nike, Adidas e outras marcas — cada uma conferida antes de chegar até você.</p>
+                <p class="corpo">Trabalho com estoque limitado, então nem toda peça tem reposição garantida. Todo produto é 100% original, com nota fiscal disponível caso precise.</p>
             </div>
+
         </div>
+    </section>
 
-        <div class="contato_item">
-            <div class="contato_icone">🕒</div>
-            <div>
-                <h4>Horário de Funcionamento</h4>
-                <p>Seg – Sex &nbsp;&nbsp;08:00 – 20:00<br>Sábado &nbsp;&nbsp;&nbsp;&nbsp;08:00 – 18:00<br>Domingo &nbsp;&nbsp;09:00 – 15:00</p>
+
+    <!-- INSTAGRAM -->
+    <section class="instagram">
+        <div class="container">
+
+            <div class="instagram-topo reveal">
+                <h2 class="titulo-dividido">Tá tudo lá</h2>
+                <p>As próximas remessas e as fotos de quem já comprou saem primeiro no Instagram.</p>
             </div>
+
+            <div class="grade-instagram">
+                <a href="https://instagram.com/helon" target="_blank" class="post-instagram"><img src="fotos/post1.jpg" alt="Publicação 1 do Instagram"></a>
+                <a href="https://instagram.com/helon" target="_blank" class="post-instagram"><img src="fotos/post2.jpg" alt="Publicação 2 do Instagram"></a>
+                <a href="https://instagram.com/helon" target="_blank" class="post-instagram"><img src="fotos/post3.jpg" alt="Publicação 3 do Instagram"></a>
+                <a href="https://instagram.com/helon" target="_blank" class="post-instagram"><img src="fotos/post4.jpg" alt="Publicação 4 do Instagram"></a>
+                <a href="https://instagram.com/helon" target="_blank" class="post-instagram"><img src="fotos/post5.jpg" alt="Publicação 5 do Instagram"></a>
+                <a href="https://instagram.com/helon" target="_blank" class="post-instagram"><img src="fotos/post6.jpg" alt="Publicação 6 do Instagram"></a>
+            </div>
+
+            <a href="https://instagram.com/helon" target="_blank" class="btn-seguir">Seguir @helon</a>
+
         </div>
+    </section>
 
-        <div class="contato_item">
-            <div class="contato_icone">📞</div>
-            <div>
-                <h4>Contato</h4>
-                <p>(11) 99999-9999</p>
-                <a href="https://wa.me/5511999999999" class="destaque_link">WhatsApp para pedidos →</a>
+
+    <!-- COMO COMPRAR -->
+    <section class="como-comprar" id="comprar">
+        <div class="container">
+
+            <div class="secao-topo reveal">
+                <h2 class="titulo-dividido">Como comprar</h2>
+                <p>Sem carrinho, sem cadastro. É direto com a gente.</p>
             </div>
+
+            <div class="passos">
+
+                <div class="passo reveal">
+                    <span class="numero">01</span>
+                    <h3>Escolha a peça</h3>
+                    <p>Veja o estoque aqui no site ou no feed do Instagram e anote a marca, o modelo e o tamanho.</p>
+                </div>
+
+                <div class="passo reveal reveal_atraso1">
+                    <span class="numero">02</span>
+                    <h3>Chama no direct</h3>
+                    <p>Manda mensagem confirmando disponibilidade do tamanho antes de fechar — o estoque é limitado.</p>
+                </div>
+
+                <div class="passo reveal reveal_atraso2">
+                    <span class="numero">03</span>
+                    <h3>Combina e recebe</h3>
+                    <p>Acertamos pagamento (Pix) e entrega. Envio para todo o Brasil, retirada combinada na cidade.</p>
+                </div>
+
+            </div>
+
         </div>
+    </section>
 
-    </div>
 
-    <div class="card_pedido">
+    <!-- LISTA DE ESPERA -->
+    <section class="espera">
+        <div class="container reveal">
+            <h2 class="titulo-dividido">Não perca a próxima remessa</h2>
+            <p>Deixa seu WhatsApp e te aviso assim que chegar peça nova — antes de postar pra todo mundo.</p>
 
-        <p class="mini_titulo">PEÇA AGORA</p>
-        <h3>Delivery pelo WhatsApp — rápido e fácil</h3>
-        <p>Manda um oi pelo WhatsApp e a gente prepara tudo com carinho. Entrega na Vila Madalena e redondezas.</p>
+            <form class="form-espera" onsubmit="return false;">
+                <input type="tel" placeholder="Seu WhatsApp com DDD" required>
+                <button type="submit" class="btn btn-cheio">Quero ser avisado</button>
+            </form>
+        </div>
+    </section>
 
-        <a href="https://wa.me/5511999999999" class="btn_escuro">💬 Iniciar Pedido no WhatsApp</a>
 
-        <div class="card_pedido_divisor"></div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grade">
+            <span class="footer-logo">HELON</span>
 
-        <div class="card_pedido_stats">
-            <div>
-                <strong>Grátis</strong>
-                <span>acima de R$ 30</span>
-            </div>
-            <div>
-                <strong>~30min</strong>
-                <span>tempo médio</span>
-            </div>
-            <div>
-                <strong>5km</strong>
-                <span>raio de entrega</span>
+            <div class="footer-redes">
+                <a href="https://instagram.com/helon" target="_blank">Instagram</a>
+                <a href="https://wa.me/5500000000000" target="_blank">WhatsApp</a>
             </div>
         </div>
 
-    </div>
+        <p class="copyright">© 2026 HELON. Peças originais, sujeitas à disponibilidade de estoque.</p>
+    </footer>
 
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-    <div class="logo_texto">Dona <span style="color: var(--amarelo);">Cida</span></div>
-    <p class="slogan">Sabor de casa, todos os dias.</p>
-    <div class="footer_links">
-        <a href="#destaques">Cardápio</a>
-        <a href="#sobre">Sobre Nós</a>
-        <a href="#contato">Contato</a>
-        <a href="https://wa.me/5511999999999">WhatsApp</a>
-    </div>
-    <p class="copyright">© 2026 Dona Cida. Todos os direitos reservados.</p>
-</footer>
-
+    <script src="script.js"></script>
 </body>
-
 </html>

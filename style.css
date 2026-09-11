@@ -1,0 +1,818 @@
+/* =====================================================
+   HELON — base de identidade visual
+   Revenda multimarcas (Nike, Adidas...), clean/minimalista
+   Já personalizado com o nome "Helon".
+===================================================== */
+
+:root {
+
+    --concreto: #F1F1EF;      /* fundo principal */
+    --papel: #FFFFFF;         /* cards, blocos de destaque */
+    --tinta: #141414;         /* texto principal, header */
+    --cimento: #86847E;       /* texto secundário */
+    --linha: #D8D6CF;         /* bordas, divisores */
+    --sinalizacao: #8FB9AE;   /* cor de acento — verde-sálvia, usar pouco, em blocos e detalhes */
+    --sinalizacao-forte: #4F7A70; /* mesma cor, mais escura — usada em texto/links (contraste) */
+
+    --fonte-display: "Fraunces", serif;
+    --fonte-texto: "Inter", sans-serif;
+}
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--concreto);
+    color: var(--tinta);
+    font-family: var(--fonte-texto);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 6%;
+}
+
+
+/* =====================================================
+   DIVISOR ENTRE SEÇÕES
+   Linha fina — no lugar da antiga faixa de sinalização,
+   mais alinhado ao visual clean/editorial.
+===================================================== */
+
+.divisor {
+    height: 1px;
+    background-color: var(--linha);
+    max-width: 1200px;
+    margin: 0 6%;
+}
+
+
+/* =====================================================
+   MARQUEE — faixa de marcas em movimento contínuo
+   Puro CSS (translateX em loop), custo quase zero.
+===================================================== */
+
+.marquee {
+    overflow: hidden;
+    background-color: var(--tinta);
+    padding: 16px 0;
+}
+
+.marquee-trilho {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: 20px;
+    animation: rolar-marquee 26s linear infinite;
+}
+
+.marquee-trilho span {
+    font-family: var(--fonte-display);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--concreto);
+    white-space: nowrap;
+}
+
+.marquee-ponto {
+    color: var(--sinalizacao);
+    font-family: var(--fonte-texto) !important;
+}
+
+@keyframes rolar-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.marquee:hover .marquee-trilho {
+    animation-play-state: paused;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 6%;
+    background-color: var(--concreto);
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.rolado {
+    padding: 16px 6%;
+    box-shadow: 0 1px 0 var(--linha);
+}
+
+.logo {
+    font-family: var(--fonte-display);
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    color: var(--tinta);
+}
+
+.nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.nav-indicador {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    height: 1.5px;
+    width: 0;
+    background-color: var(--tinta);
+    opacity: 0;
+    transition: transform 0.3s ease, width 0.3s ease, opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.nav:hover .nav-indicador { opacity: 1; }
+
+.nav a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--tinta);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav a:hover { border-color: var(--tinta); }
+
+.nav .nav-insta {
+    color: var(--sinalizacao-forte);
+}
+
+.nav .nav-insta:hover {
+    border-color: var(--sinalizacao-forte);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 2px;
+    background-color: var(--tinta);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    position: relative;
+    padding: 60px 6% 90px;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-family: var(--fonte-display);
+    font-weight: 900;
+    font-optical-sizing: auto;
+    font-size: clamp(44px, 8vw, 96px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+}
+
+/* bloco quadrado decorativo, como na referência */
+.hero-acento {
+    width: 100px;
+    height: 100px;
+    background-color: var(--sinalizacao);
+    margin-top: 28px;
+}
+
+.hero-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 60px;
+}
+
+.hero-legenda {
+    font-size: 14px;
+    color: var(--cimento);
+    max-width: 320px;
+}
+
+.hero-acoes {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 26px;
+    font-family: var(--fonte-texto);
+    font-size: 13px;
+    text-decoration: none;
+    border: 1px solid var(--tinta);
+    background-color: transparent;
+    color: var(--tinta);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--tinta);
+    color: var(--papel);
+}
+
+.btn-cheio {
+    background-color: var(--tinta);
+    color: var(--papel);
+}
+
+.btn-cheio:hover {
+    background-color: var(--sinalizacao-forte);
+    border-color: var(--sinalizacao-forte);
+}
+
+/* SELO — pequeno bloco de destaque no hero, no espírito da referência */
+.carimbo {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    background-color: var(--sinalizacao);
+    color: var(--tinta);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+
+/* =====================================================
+   LANÇAMENTOS (grade uniforme de fotos pequenas)
+===================================================== */
+
+.lancamentos {
+    padding: 90px 6%;
+}
+
+.secao-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.secao-topo h2 {
+    font-family: var(--fonte-display);
+    font-weight: 900;
+    font-size: clamp(32px, 5vw, 52px);
+    letter-spacing: -0.5px;
+}
+
+.secao-topo p {
+    max-width: 320px;
+    color: var(--cimento);
+    font-size: 13.5px;
+}
+
+.grade-produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px 24px;
+}
+
+.peca {
+    display: block;
+    text-decoration: none;
+    color: var(--tinta);
+    perspective: 700px;
+}
+
+.peca-foto {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    max-width: 220px;
+    margin: 0 auto;
+    background-color: var(--concreto);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid var(--linha);
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.peca-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.peca:hover .peca-foto img { transform: scale(1.08); }
+
+/* RÓTULO DE HOVER — aparece sobre a foto ao passar o mouse */
+.peca-hover {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(20, 20, 20, 0.55);
+    color: var(--papel);
+    font-family: var(--fonte-texto);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+
+.peca:hover .peca-hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CORTINA — revelação da foto ao entrar na tela */
+.peca-cortina {
+    position: absolute;
+    inset: 0;
+    background-color: var(--sinalizacao);
+    transform-origin: right center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.peca.ativo .peca-cortina {
+    transform: scaleX(0);
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* placeholder visível até a foto real entrar */
+.peca-foto .placeholder-aviso {
+    font-size: 10.5px;
+    color: var(--cimento);
+    text-align: center;
+    padding: 10px;
+    border: 1px dashed var(--linha);
+    margin: 14px;
+}
+
+.peca-tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 220px;
+    margin: 12px auto 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--linha);
+    font-size: 12px;
+}
+
+.peca-tag .marca {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--sinalizacao-forte);
+    margin-bottom: 3px;
+}
+
+.peca-tag .nome { font-weight: 600; }
+.peca-tag .preco { color: var(--cimento); white-space: nowrap; }
+
+.peca-selo {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: var(--sinalizacao-forte);
+    color: var(--papel);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 4px 9px;
+}
+
+
+
+/* =====================================================
+   SOBRE
+===================================================== */
+
+.sobre {
+    padding: 90px 6%;
+    background-color: var(--tinta);
+    color: var(--concreto);
+}
+
+.sobre-grade {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.sobre-foto {
+    aspect-ratio: 3 / 4;
+    background-color: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobre-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sobre-texto span.rotulo {
+    font-size: 13px;
+    color: var(--sinalizacao);
+    display: block;
+    margin-bottom: 18px;
+}
+
+.sobre-texto p.destaque {
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+}
+
+.sobre-texto p.corpo {
+    color: #B9B7B1;
+    font-size: 14px;
+    max-width: 480px;
+}
+
+
+/* =====================================================
+   INSTAGRAM
+===================================================== */
+
+.instagram {
+    padding: 90px 6%;
+    text-align: center;
+}
+
+.instagram-topo {
+    max-width: 480px;
+    margin: 0 auto 45px;
+}
+
+.instagram-topo h2 {
+    font-family: var(--fonte-display);
+    font-weight: 900;
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing: -0.5px;
+}
+
+.instagram-topo p {
+    margin-top: 14px;
+    color: var(--cimento);
+    font-size: 13.5px;
+}
+
+.grade-instagram {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.post-instagram {
+    aspect-ratio: 1;
+    background-color: var(--papel);
+    border: 1px solid var(--linha);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cimento);
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.post-instagram img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-seguir {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+    padding: 14px 28px;
+    background-color: var(--tinta);
+    color: var(--papel);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.btn-seguir:hover { background-color: var(--sinalizacao-forte); }
+
+
+/* =====================================================
+   COMO COMPRAR
+===================================================== */
+
+.como-comprar {
+    padding: 90px 6%;
+    background-color: var(--papel);
+    border-top: 1px solid var(--linha);
+    border-bottom: 1px solid var(--linha);
+}
+
+.passos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 50px auto 0;
+}
+
+.passo {
+    border-left: 2px solid var(--tinta);
+    padding-left: 20px;
+}
+
+.passo .numero {
+    font-family: var(--fonte-display);
+    font-weight: 900;
+    font-size: 34px;
+    color: var(--sinalizacao-forte);
+}
+
+.passo h3 {
+    margin-top: 10px;
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.passo p {
+    margin-top: 8px;
+    color: var(--cimento);
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   LISTA DE ESPERA
+===================================================== */
+
+.espera {
+    padding: 90px 6%;
+    text-align: center;
+}
+
+.espera h2 {
+    font-family: var(--fonte-display);
+    font-weight: 900;
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing: -0.5px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.espera p {
+    margin-top: 16px;
+    color: var(--cimento);
+    font-size: 13.5px;
+}
+
+.form-espera {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.form-espera input {
+    padding: 14px 18px;
+    border: 1px solid var(--tinta);
+    background-color: var(--papel);
+    font-family: var(--fonte-texto);
+    font-size: 13px;
+    width: 280px;
+    max-width: 100%;
+}
+
+.form-espera input:focus {
+    outline: 2px solid var(--sinalizacao);
+    outline-offset: 2px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 50px 6% 30px;
+    background-color: var(--tinta);
+    color: #B9B7B1;
+}
+
+.footer-grade {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-family: var(--fonte-display);
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--concreto);
+}
+
+.footer-redes {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-redes a {
+    text-decoration: none;
+    color: #B9B7B1;
+    font-size: 13px;
+}
+
+.footer-redes a:hover { color: var(--sinalizacao); }
+
+.copyright {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 11.5px;
+    color: #7A776F;
+}
+
+
+/* =====================================================
+   ENTRADA DO HERO (único momento de animação orquestrado)
+===================================================== */
+
+.carimbo,
+.hero h1,
+.hero-acento,
+.hero-legenda,
+.hero-acoes {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: entrada 0.7s ease forwards;
+}
+
+.hero h1 { animation-delay: 0.1s; }
+.hero-acento { animation-delay: 0.3s; transform: scale(0.8); }
+.hero-legenda { animation-delay: 0.4s; }
+.carimbo { animation-delay: 0.5s; }
+.hero-acoes { animation-delay: 0.55s; }
+
+@keyframes entrada {
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+/* =====================================================
+   REVEAL — pequena vida ao rolar a página
+   (opacidade + leve subida, sem blur — leve de propósito)
+===================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal_atraso1.ativo { transition-delay: 0.08s; }
+.reveal_atraso2.ativo { transition-delay: 0.16s; }
+
+
+/* =====================================================
+   TÍTULOS DIVIDIDOS EM PALAVRAS
+   Cada palavra "sobe" com um pequeno atraso entre elas —
+   feito só com CSS transition + classes via JS.
+===================================================== */
+
+.titulo-dividido .linha-palavra {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding-bottom: 0.08em;
+}
+
+.titulo-dividido .palavra {
+    display: inline-block;
+    transform: translateY(105%);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.titulo-dividido.ativo .palavra {
+    transform: translateY(0);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .carimbo, .hero h1, .hero-acento, .hero-legenda, .hero-acoes,
+    .reveal, .titulo-dividido .palavra, .peca-cortina, .marquee-trilho {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .peca-cortina { display: none; }
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .sobre-grade { grid-template-columns: 1fr; }
+    .passos { grid-template-columns: 1fr; gap: 30px; }
+}
+
+@media (max-width: 640px) {
+
+    .nav { display: none; }
+    .menu-toggle { display: flex; }
+
+    .nav.aberto {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--concreto);
+        padding: 20px 6%;
+        border-bottom: 1px solid var(--linha);
+        gap: 18px;
+    }
+
+    .hero-rodape { flex-direction: column; align-items: flex-start; }
+    .hero-acoes { flex-direction: column; align-items: flex-start; }
+
+    .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 26px 16px; }
+
+    .grade-instagram { grid-template-columns: repeat(3, 1fr); }
+
+    .form-espera { flex-direction: column; align-items: center; }
+    .form-espera input { width: 100%; }
+}
